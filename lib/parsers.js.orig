@@ -119,7 +119,7 @@ module.exports = function(braces, options) {
 
     .set('multiplier', function() {
       var pos = this.position();
-      var m = this.match(/^\{((?:,|\{,+\})+)\}/);
+      var m = this.match(/^\{(,+(?:(\{,+\})*),*|,*(?:(\{,+\})*),+)\}/);
       if (!m) return;
 
       this.multiplier = true;
